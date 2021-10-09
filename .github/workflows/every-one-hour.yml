@@ -20,8 +20,8 @@ jobs:
             npm-
       - name: Install Node.js dependencies
         run: |-
-          if [[ "${{ inputs.force_install }}" == "true" || "${{ steps.npm-cache.outputs.cache-hit }}" != "true" ]]; then
-            npm install
+          if [[ "${{ steps.npm-cache.outputs.cache-hit }}" != "true" ]]; then
+            cd ../ && npm install
           else
             echo "Using cache"
           fi

@@ -1,4 +1,3 @@
-require('dotenv').config();
 const SlackBot = require('slackbots');
 const phrases = require('./phrases.json');
 

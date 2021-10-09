@@ -9,7 +9,6 @@ const getRandomIndexFromArray = (array) => {
 }
 
 const bot = new SlackBot({
-    json_file_store: './db_slackbutton_slash_command/',
     token: BOT_TOKEN,
     name: 'Slack bot'
 });

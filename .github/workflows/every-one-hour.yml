@@ -21,11 +21,11 @@ jobs:
       - name: Install Node.js dependencies
         run: |-
           if [[ "${{ steps.npm-cache.outputs.cache-hit }}" != "true" ]]; then
-            cd ../ && npm install
+            npm install
           else
             echo "Using cache"
           fi
-        shell: bash
+        working-directory: ./
       - name: Run Node.js script
         run: npm start
         env:

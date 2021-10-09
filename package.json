@@ -1,19 +1,19 @@
 {
-    "name": "hackathon-2021.slack-bot.base-example",
-    "version": "1.0.0",
-    "description": "Slack bot example for SheSharp hackathon 2021",
-    "main": "index.js",
-    "scripts": {
-      "start": "node index.js"
-    },
-    "keywords": [
-      "bot",
-      "slack"
-    ],
-    "author": "SheSharp",
-    "license": "ISC",
-    "dependencies": {
-      "dotenv": "^8.0.0",
-      "slackbots": "^1.2.0"
-    }
+  "name": "hackathon-2021.slack-bot.base-example",
+  "version": "1.0.0",
+  "description": "Slack bot example for SheSharp hackathon 2021",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "bot",
+    "slack"
+  ],
+  "author": "SheSharp",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "slackbots": "^1.2.0"
+  }
 }

@@ -15,7 +15,6 @@ const bot = new SlackBot({
 const selectedPhrase = phrases.positive[getRandomIndexFromArray(phrases.positive)];
 
 bot.on('start', () => {
-    bot.postMessageToChannel('general', selectedPhrase, {icon_emoji: ':robot_face:'})
+    bot.postMessageToChannel('general', selectedPhrase, {icon_emoji: ':robot_face:'});
+    process.exit();
 });
-
-process.exit();

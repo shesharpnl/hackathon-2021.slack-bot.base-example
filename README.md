@@ -52,3 +52,14 @@ We have different ways to creating a slackbot! Literally tones of libraries arou
 
 On this example we are using "SlackBots" library, which is a easy and quick way to have your Bot up and running with a few lines of code (Please check index.js).
 
+# How can I trigger the messages without a Server to keep my code running?
+
+We can create a work around it by using [GitHub Actions](https://github.com/features/actions)! 
+
+As the goal of our Bot is to **send messages after an amount of time**, we don't need a script listening to actions but just **triggering the action**.
+So based on that we can program GHA to run our script that sends the messages 🚀
+
+## Notes:
+
+1. This approach will not work with "reaction actions" as if you want your Bot to react in interactions made to it. Thats because to do so your Bot script needs to be running all the time to be able to listen to this actions and this approach **we trigger the bot once in a while**, if you would like your bot to be more **interactive** you need to place it up and running in a server
+1. As we are using GHA to run the script, make sure to finish the process at the end of the desired action otherwise your GHA will fail because of **timeout** or it will not **stop running**.

@@ -10,7 +10,40 @@ To be able to develop an Slack bot using GitHub actions and node.js you will nee
 
 1. A github account and repository
 1. Node.js installed on your machine
-1. A workspace and **your** bot app on Slack 
+1. A workspace and **your** bot app on Slack
+
+# Where do I store my app keys/passwords? 🤔
+
+When developing an app we **NEVER** expose keys or passwords on our application! That's because of security reasons... for example if you write down your database credentials on your code, **ANYONE** can have access to your database making it easy to change data and access personal information.
+
+On our case, we are not working with databases - phewww 😉 
+
+But we still have sensitive keys that we need on our app like our **BOT_TOKEN**, which is the token generated on slack when you create your bot app! 
+We can't hard code it's value on the codebase, so we need to create a **.env** file! 
+
+A **.env** file is where we place all our Enviroment Variables, like credentials, passwords, environment settings... You can read more about it [here](https://dev.to/aadilraza339/what-is-env-file-in-node-js-3h6c)
+
+So now you know that you should store your app sensitive data into an .env file, but don't forget to add it into your **.gitignore** file so it won't be commited on your repository. If you push your .env filled with information to your repository it would be the same as not having a .env at all, am I right? 🤓
+
+## But how github actions will have access to the environment variables without the .env file? 🤨
+
+Well these version-controlled source code and file hosting platforms like GitHub, BitBucket, GitLab and etc, have an special place for that.
+
+On our case (GitHub) on your repository you can find a navbar.
+
+![Repository Navbar](./docs/images/repositoryNavbar.png?raw=true "Repository Navbar")
+
+You should click on Settings. On this page you can find all the settings related with your repository, including branches, access, webhooks... everything!
+
+![Settings Menu](./docs/images/settingsMenu.png?raw=true "Settings Menu")
+
+If look close to the end of the side bar you should find the secrets button, on that page is where we store the secrets that we need on our application to run, on this case the **BOT_TOKEN**.
+
+After navigating to the secrets on the menu item, you should be able to see different sections of secrets... On this application we will need to click on the new repository secret button on the top.
+
+![Repository Secrets](./docs/images/repositorySecrets.png?raw=true "Repository Secrets")
+
+There you should be able to add your secret 😉. Make sure to add the name as the **same** as you have written on your code!
 
 # How do I create a developer account on Slack?
 
